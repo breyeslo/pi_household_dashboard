@@ -1,4 +1,4 @@
-# pi-dashboard
+# pi_household_dashboard
 
 A calm, glanceable e-ink home dashboard for the Raspberry Pi and Pimoroni Inky screens.
 Weather, your next three days of calendar, top news headlines, and your to-do list,
@@ -45,20 +45,20 @@ your time zone, and enable SSH.
 - `todo`: see [To-do list options](#to-do-list-options). Or set `enabled: false` to skip it for now.
 
 **4. Copy the folder to the SD card.** With the card in your computer, copy the whole
-`pi-dashboard` folder onto the **bootfs** drive.
+`pi_household_dashboard` folder onto the **bootfs** drive.
 
 **5. Install on the Pi.** Put the card in the Pi, attach the screen, power it on, and connect
 from your computer:
 
 ```bash
 ssh youruser@yourpi.local
-bash /boot/firmware/pi-dashboard/install.sh
+bash /boot/firmware/pi_household_dashboard/install.sh
 sudo reboot
 ```
 
 About two minutes after the reboot the screen draws for the first time, then again at the top of every hour.
 Afterwards, delete the copy on the boot drive, since it contains your private links:
-`sudo rm -r /boot/firmware/pi-dashboard`
+`sudo rm -r /boot/firmware/pi_household_dashboard`
 
 ## To-do list options
 
@@ -83,15 +83,15 @@ python dashboard.py --preview test.png --size 600x448
 
 | | |
 |---|---|
-| Refresh now | `~/pi-dashboard/.venv/bin/python ~/pi-dashboard/dashboard.py` |
-| Logs | `journalctl -u pi-dashboard.service -n 50 --no-pager` |
-| Next scheduled run | `systemctl list-timers pi-dashboard.timer` |
-| Last image drawn | `~/pi-dashboard/last.png` |
-| Change refresh interval | Edit `OnCalendar=` in `/etc/systemd/system/pi-dashboard.timer`, then `sudo systemctl daemon-reload && sudo systemctl restart pi-dashboard.timer` |
+| Refresh now | `~/pi_household_dashboard/.venv/bin/python ~/pi_household_dashboard/dashboard.py` |
+| Logs | `journalctl -u pi_household_dashboard.service -n 50 --no-pager` |
+| Next scheduled run | `systemctl list-timers pi_household_dashboard.timer` |
+| Last image drawn | `~/pi_household_dashboard/last.png` |
+| Change refresh interval | Edit `OnCalendar=` in `/etc/systemd/system/pi_household_dashboard.timer`, then `sudo systemctl daemon-reload && sudo systemctl restart pi_household_dashboard.timer` |
 
 ## Troubleshooting
 
-- **`No module named 'inky'`**: run `~/pi-dashboard/.venv/bin/pip install "inky[rpi]>=2.0"`.
+- **`No module named 'inky'`**: run `~/pi_household_dashboard/.venv/bin/pip install "inky[rpi]>=2.0"`.
 - **"Chip Select ... claimed by spi0 CS0"**: make sure `dtoverlay=spi0-0cs` is in
   `/boot/firmware/config.txt` (the installer adds it), then reboot.
 - **"No EEPROM detected"**: the screen isn't fully seated on the pins, or I2C is off. Re-run the installer and reboot.

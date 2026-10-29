@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Raspberry Pi + Pimoroni Inky e-ink dashboard.
-https://github.com/barby103/pi-dashboard  ·  MIT License
+https://github.com/breyeslo/pi_household_dashboard  ·  MIT License
 
     +--------------------------------------------------+
     | Home                          Mon, Sep 28  9:00 AM |
@@ -39,7 +39,7 @@ GOOGLE_SCOPES = [
     "https://www.googleapis.com/auth/calendar.readonly",
     "https://www.googleapis.com/auth/tasks.readonly",
 ]
-UA = "pi-dashboard/1.0"
+UA = "pi_household_dashboard/1.0"
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)

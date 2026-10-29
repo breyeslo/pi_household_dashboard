@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Run on the Pi:   bash /boot/firmware/pi-dashboard/install.sh
+# Run on the Pi:   bash /boot/firmware/pi_household_dashboard/install.sh
 set -euo pipefail
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-APP="$HOME/pi-dashboard"
+APP="$HOME/pi_household_dashboard"
 
 echo "==> System packages"
 sudo apt-get update
@@ -31,15 +31,15 @@ python3 -m venv --system-site-packages "$APP/.venv"
 "$APP/.venv/bin/pip" install -r "$APP/requirements.txt" "inky[rpi]>=2.0"
 
 echo "==> Hourly systemd timer"
-sed -e "s|__USER__|$USER|g" -e "s|__APP__|$APP|g" "$APP/systemd/pi-dashboard.service" \
-  | sudo tee /etc/systemd/system/pi-dashboard.service >/dev/null
-sudo cp "$APP/systemd/pi-dashboard.timer" /etc/systemd/system/
+sed -e "s|__USER__|$USER|g" -e "s|__APP__|$APP|g" "$APP/systemd/pi_household_dashboard.service" \
+  | sudo tee /etc/systemd/system/pi_household_dashboard.service >/dev/null
+sudo cp "$APP/systemd/pi_household_dashboard.timer" /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable --now pi-dashboard.timer
+sudo systemctl enable --now pi_household_dashboard.timer
 
 echo
 echo "Done. Reboot once so SPI/I2C take effect:   sudo reboot"
 echo "Manual refresh:  $APP/.venv/bin/python $APP/dashboard.py"
-echo "Logs:            journalctl -u pi-dashboard.service -n 50"
+echo "Logs:            journalctl -u pi_household_dashboard.service -n 50"
 echo
 echo "Enjoying it? Buy me a coffee: https://buymeacoffee.com/breyeslo"

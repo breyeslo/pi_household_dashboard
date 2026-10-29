@@ -10,12 +10,12 @@ Do these steps on your computer, not the Pi. It takes about 20 minutes once.
 2. **APIs & Services → Library**: enable **Google Tasks API** and **Google Calendar API**.
 
 ## 2. Configure sign-in (Google Auth Platform)
-1. **Branding**: app name (e.g. `pi-dashboard`) and your email as support email.
+1. **Branding**: app name (e.g. `pi_household_dashboard`) and your email as support email.
 2. **Audience**: choose **External**, then under *Test users* add your own Gmail address.
 3. **Data Access → Add or remove scopes**: add `.../auth/tasks.readonly` and
    `.../auth/calendar.readonly`. Save.
 4. **Clients → Create client → Desktop app**. Download the JSON, rename it
-   `credentials.json`, and put it in the `pi-dashboard` folder.
+   `credentials.json`, and put it in the `pi_household_dashboard` folder.
 
 ## 3. Publish the app (so sign-in doesn't expire weekly)
 Apps left in **Testing** mode lose their sign-in every 7 days. To publish, Google requires a
@@ -39,11 +39,11 @@ that review only affects showing your logo and name on the sign-in screen.
 pip install google-auth-oauthlib      # on Windows: py -m pip install google-auth-oauthlib
 python setup_google.py                # on Windows: py setup_google.py
 ```
-Sign in. Google warns "Google hasn't verified this app": click **Advanced → Go to pi-dashboard
+Sign in. Google warns "Google hasn't verified this app": click **Advanced → Go to pi_household_dashboard
 (unsafe)**, then **Allow**. This is your own app, so that's expected.
 
 A `token.json` appears in the folder. Copy it to the Pi along with everything else
-(`~/pi-dashboard/token.json`). Keep it private.
+(`~/pi_household_dashboard/token.json`). Keep it private.
 
 ## Using a calendar other than your main one (`calendar.source: google`)
 In Google Calendar, open the calendar's ⋮ menu → **Settings and sharing** → *Integrate calendar*,
