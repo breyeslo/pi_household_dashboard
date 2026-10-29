@@ -6,7 +6,7 @@ Run this on your laptop/desktop (it opens a browser), NOT on the Pi.
   python setup_google.py
 
 Needs credentials.json (OAuth "Desktop app" client) in this folder.
-Produces token.json -> copy it into the pi_household_dashboard folder for the Pi.
+Produces token.json -> copy it into the pi_household_dashboard-main folder for the Pi.
 """
 from pathlib import Path
 from google_auth_oauthlib.flow import InstalledAppFlow

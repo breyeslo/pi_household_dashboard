@@ -15,7 +15,7 @@ Do these steps on your computer, not the Pi. It takes about 20 minutes once.
 3. **Data Access → Add or remove scopes**: add `.../auth/tasks.readonly` and
    `.../auth/calendar.readonly`. Save.
 4. **Clients → Create client → Desktop app**. Download the JSON, rename it
-   `credentials.json`, and put it in the `pi_household_dashboard` folder.
+   `credentials.json`, and put it in the `pi_household_dashboard-main` folder.
 
 ## 3. Publish the app (so sign-in doesn't expire weekly)
 Apps left in **Testing** mode lose their sign-in every 7 days. To publish, Google requires a

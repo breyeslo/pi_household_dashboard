@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run on the Pi:   bash /boot/firmware/pi_household_dashboard/install.sh
+# Run on the Pi:   bash /boot/firmware/pi_household_dashboard-main/install.sh
 set -euo pipefail
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 APP="$HOME/pi_household_dashboard"

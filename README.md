@@ -45,20 +45,20 @@ your time zone, and enable SSH.
 - `todo`: see [To-do list options](#to-do-list-options). Or set `enabled: false` to skip it for now.
 
 **4. Copy the folder to the SD card.** With the card in your computer, copy the whole
-`pi_household_dashboard` folder onto the **bootfs** drive.
+`pi_household_dashboard-main` folder onto the **bootfs** drive.
 
 **5. Install on the Pi.** Put the card in the Pi, attach the screen, power it on, and connect
 from your computer:
 
 ```bash
 ssh youruser@yourpi.local
-bash /boot/firmware/pi_household_dashboard/install.sh
+bash /boot/firmware/pi_household_dashboard-main/install.sh
 sudo reboot
 ```
 
 About two minutes after the reboot the screen draws for the first time, then again at the top of every hour.
 Afterwards, delete the copy on the boot drive, since it contains your private links:
-`sudo rm -r /boot/firmware/pi_household_dashboard`
+`sudo rm -r /boot/firmware/pi_household_dashboard-main`
 
 ## To-do list options
 
