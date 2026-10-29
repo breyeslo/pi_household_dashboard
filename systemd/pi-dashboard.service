@@ -1,0 +1,11 @@
+[Unit]
+Description=Refresh the e-ink dashboard
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=__USER__
+WorkingDirectory=__APP__
+ExecStart=__APP__/.venv/bin/python __APP__/dashboard.py
+TimeoutStartSec=300

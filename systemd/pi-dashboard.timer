@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh the e-ink dashboard every hour
+
+[Timer]
+OnBootSec=2min
+OnCalendar=hourly
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,10 @@
+# Core (works on any computer, e.g. for --preview). install.sh adds the Inky driver on the Pi.
+pillow
+requests
+feedparser
+pyyaml
+icalendar
+recurring-ical-events
+google-api-python-client
+google-auth
+gkeepapi

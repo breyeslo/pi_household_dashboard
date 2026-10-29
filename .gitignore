@@ -1,0 +1,16 @@
+# Secrets: never publish these
+config.yaml
+token.json
+credentials.json
+client_secret*.json
+
+# Runtime files
+cache.json
+last.png
+*.png
+!docs/*.png
+
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

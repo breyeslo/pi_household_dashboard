@@ -1,0 +1,46 @@
+# Copy to config.yaml and edit. config.yaml is private: never commit it.
+
+title: "Home"            # text in the top-left of the header
+clock_24h: false
+rotate: 0                # 0 or 180 (or 90/270 for portrait mounting)
+saturation: 0.6          # Inky Impression colour strength (0-1)
+
+location:
+  name: "Boston"
+  latitude: 42.36        # find yours at https://www.latlong.net
+  longitude: -71.06
+units: imperial          # imperial (°F, mph) or metric (°C, km/h)
+
+calendar:
+  enabled: true
+  days: 3
+  # ical   = easiest. Paste each calendar's secret iCal link. Works with Google,
+  #          Outlook, iCloud, Proton, etc. No accounts or API setup.
+  #          Google: Calendar settings > your calendar > "Secret address in iCal format"
+  # google = official Google Calendar API (needs setup_google.py; see README)
+  source: ical
+  ical_urls:
+    - "https://calendar.google.com/calendar/ical/PASTE_YOUR_SECRET_LINK/basic.ics"
+  calendar_ids:          # only used when source: google
+    - primary
+
+news:
+  max_items: 6
+  feeds:                 # top stories from each feed are interleaved
+    - https://feeds.npr.org/1001/rss.xml
+    - https://feeds.bbci.co.uk/news/world/rss.xml
+    - https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+
+todo:
+  enabled: true
+  heading: "To do"
+  # tasks = Google Tasks via the official API (uses token.json from setup_google.py)
+  # keep  = a Google Keep note via the UNOFFICIAL gkeepapi library (may break)
+  # Set enabled: false to hide the panel's data.
+  source: tasks
+  tasks:
+    tasklist: "@default"
+  keep:
+    email: "you@gmail.com"
+    master_token: "aas_et/PASTE_TOKEN_FROM_keep_token.py"
+    note_title: "To Do"
